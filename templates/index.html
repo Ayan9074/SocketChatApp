@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
+    <title>Word Online</title>
     <style>
       body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
@@ -43,9 +43,22 @@
     <form id="form" action="">
       <input id="input" autocomplete="off" />
       <button type="submit">Send</button>
+      <button type="button" id="switch">switch</button>
     </form>
+    <!-- The Modal -->
+    <div id="myModal2" class="modal">
+      <!-- Modal Content (The Image) -->
+      <img class="modal-content" id="img01" src="https://images.idgesg.net/images/article/2017/09/screenshot-2017-09-18-11.52.11-100736909-large.jpg">
+    </div>
+    <script>
+      var modal = document.getElementById("myModal2");
+      var switchbtn = document.getElementById("switch");
+      var modalImg = document.getElementById("img01");
+      switchbtn.onclick = function(){
+        modal.style.display = "block";
+      }
+    </script>
     <script src="/socket.io/socket.io.js"></script>
-
     <script>
       var socket = io();
       var messages = document.getElementById('messages');
