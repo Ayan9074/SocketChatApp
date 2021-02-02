@@ -31,6 +31,7 @@
                     <form id="names">
                       <div class="form-group">
                         <p>1. Enter a NickName 2. Hit Save 3. Press outside the box</p>
+                        <h3><bold>Press the escape button to switch</bold></h3>
                           <input type="text" class="form-control" placeholder="Name" autocomplete="off" id="usernickname">
                       </div>
                       <button type="submit" class="btn btn-primary" style="margin-top: 5%;" data-dismiss="modal">Save</button>
@@ -49,7 +50,7 @@
     <form id="form" action="">
       <input id="input" autocomplete="off" />
       <button type="submit">Send</button>
-      <button type="button" id="switch">switch</button>
+      <button type="button" id="switch">Escape</button>
     </form>
     <!-- The Modal -->
     <div id="myModal2" class="modal">
@@ -209,15 +210,15 @@
     Close
     Eleven countries are planting a wall of trees from east to west across Africa, just under the southern edge of the Sahara desert.
     
-    The goal is to bring the dry lands back to life.</textarea>
+    The goal is to bring the dry lands back to life.
+    Also pressing shift takes you back FYI
+  </textarea>
     
     </div>
     <script>
       var modal = document.getElementById("myModal2");
       var switchbtn = document.getElementById("switch");
-      switchbtn.onclick = function(){
-        modal.style.display = "block";
-      }
+        
     </script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -268,6 +269,16 @@
     <script>
       $(document).ready(function(){
           $("#myModal").modal('show');
+      });
+      jQuery(document).bind("keyup keydown", function(e){
+          if(e.keyCode == 16 && modal.style.display === "block"){
+              modal.style.display = "none";
+          }
+      });
+      jQuery(document).bind("keyup keydown", function(e){
+          if(e.keyCode == 27){
+              modal.style.display = "block";
+          }
       });
     </script>
   </footer>
