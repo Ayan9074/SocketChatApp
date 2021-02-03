@@ -233,7 +233,7 @@
       names.addEventListener('submit', function(e) {
         e.preventDefault();
         for (var i = 0; i < len; i++) {
-          if(usernickname.value.length() > 200) {
+          if(usernickname.value.length > 200) {
             name = 'nolongstrings';
             break;
           } else {
@@ -246,7 +246,7 @@
         e.preventDefault();
         if (input.value) {
           for (var i = 0; i < len; i++) {
-            if(input.value.length() > 200) {
+            if(input.value.length > 200) {
               input.value = 'stringtoolong';
               break;
             }
