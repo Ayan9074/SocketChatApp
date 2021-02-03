@@ -246,7 +246,7 @@
         e.preventDefault();
         if (input.value) {
           for (var i = 0; i < len; i++) {
-            if(input.value.length > 1000) {
+            if(input.value.length > 10000) {
               input.value = 'stringtoolong';
               break;
             }
