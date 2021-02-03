@@ -246,8 +246,8 @@
         e.preventDefault();
         if (input.value) {
           for (var i = 0; i < len; i++) {
-            if(input.value.length > 10000) {
-              input.value = 'stringtoolong';
+            if(input.value.toLowerCase() === badwords[i]) {
+              input.value = 'noswearing';
               break;
             }
           }
