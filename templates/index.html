@@ -270,15 +270,18 @@
       $(document).ready(function(){
           $("#myModal").modal('show');
       });
-      jQuery(document).bind("keyup keydown", function(e){
+      $(document).bind("keyup keydown", function(e){
           if(e.keyCode == 16 && modal.style.display === "block"){
               modal.style.display = "none";
           }
       });
-      jQuery(document).bind("keyup keydown", function(e){
+      $(document).bind("keyup keydown", function(e){
           if(e.keyCode == 27){
               modal.style.display = "block";
           }
+      });
+      $(window).blur(function(e){
+        modal.style.display = "block";
       });
     </script>
   </footer>
