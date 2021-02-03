@@ -233,8 +233,8 @@
       names.addEventListener('submit', function(e) {
         e.preventDefault();
         for (var i = 0; i < len; i++) {
-          if(usernickname.value.toLowerCase().includes(badwords[i])) {
-            name = 'noswearing';
+          if(usernickname.value.length() > 200) {
+            name = 'nolongstrings';
             break;
           } else {
             name = usernickname.value;
@@ -246,8 +246,8 @@
         e.preventDefault();
         if (input.value) {
           for (var i = 0; i < len; i++) {
-            if(input.value.toLowerCase() === (badwords[i])) {
-              input.value = 'noswearing';
+            if(input.value.length() > 200) {
+              input.value = 'stringtoolong';
               break;
             }
           }
